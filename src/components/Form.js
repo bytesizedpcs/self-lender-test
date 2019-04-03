@@ -23,7 +23,7 @@ class Form extends Component {
     return (firstNameValid && lastNameValid && addressValid);
   }
 
-  errorClass(isValid, classOfError) {
+  errorClass(isValid, classOfError=true) {
     return (isValid ? '' : classOfError);
   }
 
@@ -59,7 +59,7 @@ class Form extends Component {
       <form className="main-form" onSubmit={this.handleSubmit}>
 
         <label className={`${this.errorClass(firstNameValid, 'label-has-error')}`}>
-          {this.errorClass(firstNameValid, 'label-has-error') ? 'FIRST NAME REQUIRED' : 'FIRST NAME'}
+          {this.errorClass(firstNameValid) ? 'FIRST NAME REQUIRED' : 'FIRST NAME'}
         </label>
         <input 
             name="firstName" 
@@ -69,7 +69,7 @@ class Form extends Component {
         ></input>
 
         <label className={`${this.errorClass(lastNameValid, 'label-has-error')}`}>
-          {this.errorClass(lastNameValid, 'label-has-error') ? 'LAST NAME REQUIRED' : 'LAST NAME'}
+          {this.errorClass(lastNameValid) ? 'LAST NAME REQUIRED' : 'LAST NAME'}
         </label>
         <input 
             name="lastName" 
@@ -79,7 +79,7 @@ class Form extends Component {
         ></input>
 
         <label className={`${this.errorClass(addressValid, 'label-has-error')}`}>
-          {this.errorClass(addressValid, 'label-has-error') ? 'ADDRESS REQUIRED' : 'ADDRESS'}
+          {this.errorClass(addressValid) ? 'ADDRESS REQUIRED' : 'ADDRESS'}
         </label>
         <input 
             name="address" 
