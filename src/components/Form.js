@@ -27,14 +27,6 @@ class Form extends Component {
     return (isValid ? '' : classOfError);
   }
 
-  inputErrorClass(isValid) {
-    return (isValid ? '' : 'input-has-error');
-  }
-
-  labelErrorClass(isValid) {
-    return (isValid ?  '' : 'label-has-error');
-  }
-
   handleInputChange = (event) => {
     const { name, value } = event.target;
 
